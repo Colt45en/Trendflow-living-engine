@@ -1,0 +1,11 @@
+import React, { lazy, Suspense } from 'react';
+const LazyImage = lazy(() => import('./LazyImage'));
+
+// In component
+<Suspense fallback={<div className="bg-gray-700 animate-pulse w-full h-64" />}>
+  <LazyImage 
+    src={item.image} 
+    alt={item.name}
+    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
+  />
+</Suspense>
